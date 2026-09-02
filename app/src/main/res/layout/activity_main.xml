@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <org.osmdroid.views.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="16dp">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnMyLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:src="@drawable/ic_my_location"
+            app:fabSize="normal"
+            app:fabCustomSize="56dp"
+            app:tint="@color/white"
+            app:backgroundTint="@color/primary"
+            android:elevation="8dp"/>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/card_bg"
+        android:layout_margin="12dp"
+        android:layout_marginBottom="24dp"
+        android:elevation="8dp"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📍 SOLONAV"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Partage de position invisible et sécurisé"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:textColor="@color/text_secondary"
+            android:layout_marginBottom="20dp"/>
+
+        <EditText
+            android:id="@+id/etNumero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="📱 Numéro de l'autre (06XXXXXXXX)"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:padding="16dp"
+            android:background="@drawable/input_bg"
+            android:textSize="15sp"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="12dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:spacing="8dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDemander"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="📩 DEMANDER POSITION"
+                style="@style/ButtonPrimary"
+                android:enabled="false"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnArreter"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="🛑 STOP"
+                style="@style/ButtonDanger"
+                android:enabled="false"/>
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnShowFloating"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="🗺️ CARTE FLOTTANTE"
+            style="@style/ButtonSuccess"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+</LinearLayout>

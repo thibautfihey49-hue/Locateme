@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ButtonModern" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">16dp</item>
+        <item name="elevation">4dp</item>
+        <item name="paddingVertical">14dp</item>
+        <item name="paddingHorizontal">20dp</item>
+        <item name="textSize">15sp</item>
+        <item name="fontFamily">sans-serif-medium</item>
+    </style>
+    <style name="ButtonPrimary" parent="ButtonModern">
+        <item name="backgroundTint">@color/primary</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="ButtonSuccess" parent="ButtonModern">
+        <item name="backgroundTint">@color/accent</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="ButtonDanger" parent="ButtonModern">
+        <item name="backgroundTint">@color/danger</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+</resources>
