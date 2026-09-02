@@ -74,7 +74,7 @@ class LocationSharingService : Service() {
         val current = GeoPoint(location.latitude, location.longitude)
         
         lastLocation?.let { last ->
-            val dist = current.distanceAs(last)
+            val dist = current.distanceTo(last)
             if (dist < 10) return
         }
         lastLocation = current

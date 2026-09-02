@@ -31,20 +31,20 @@ class SmsDataReceiver : BroadcastReceiver() {
                     SmsMessage.createFromPdu(pdu as ByteArray)
                 }
 
-                val msg = String(sms.messageBody)
-                val sender = sms.originatingAddress ?: ""
+                val msg = sms.messageBody  // ✅ Déjà une String, pas besoin de conversion
+                val sender = sms.displayOriginatingAddress ?: ""
 
                 Log.d(TAG, "SMS reçu de $sender : $msg")
 
                 val broadcast = Intent(ACTION_POSITION_UPDATE)
                 broadcast.setPackage(context?.packageName)
                 broadcast.putExtra("sms_data", msg)
-                broadcast.putExtra("sender", sender)
+                broadcast.putExtra("sender", sender)  // ✅ Plus jamais null
                 context?.sendBroadcast(broadcast)
 
                 if (msg == "SOLONAV_DEMANDE_POS") {
                     val serviceIntent = Intent(context, LocationSharingService::class.java)
-                    serviceIntent.putExtra("target_number", sender)
+                    serviceIntent.putExtra("target_number", sender.replace("+33", "0"))
                     context?.startForegroundService(serviceIntent)
                 }
             }
