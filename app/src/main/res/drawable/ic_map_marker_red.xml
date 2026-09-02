@@ -3,5 +3,5 @@
     android:viewportWidth="32" android:viewportHeight="32">
   <path android:fillColor="#EF4444"
       android:pathData="M16,2C10.48,2 6,6.48 6,12c0,9 10,18 10,18s10,-9 10,-18c0,-5.52 -4.48,-10 -10,-10zM16,16c-2.21,0 -4,-1.79 -4,-4s1.79,-4 4,-4 4,1.79 4,4 -1.79,4 -4,4z"/>
-  <circle android:fillColor="#FFFFFF" android:cx="16" android:cy="12" android:r="4"/>
+  <circle fillColor="#FFFFFF" cx="16" cy="12" r="4"/>
 </vector>
